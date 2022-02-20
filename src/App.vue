@@ -8,13 +8,12 @@ import Product from './components/Product.vue'
     <img alt="Vue logo" class="logo" src="./assets/router.png" width="125" height="125" />
 
     <div class="wrapper">
-      <Header />
-    </div>
-    <div class="wrapper">
-      <Product />
+      <Header/>
     </div>
   </header>
-
+  <div class="wrapper">
+    <Product/>
+  </div>
 </template>
 
 <style>
@@ -40,7 +39,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'YanoljaYacheR';
   font-weight: normal;
-  
+
 }
 
 h1 {
