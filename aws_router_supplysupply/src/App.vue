@@ -1,6 +1,6 @@
 <script setup>
 import Header from './components/Header.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Product from './components/Product.vue'
 </script>
 
 <template>
@@ -10,11 +10,11 @@ import TheWelcome from './components/TheWelcome.vue'
     <div class="wrapper">
       <Header />
     </div>
+    <div class="wrapper">
+      <Product />
+    </div>
   </header>
 
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
 <style>
