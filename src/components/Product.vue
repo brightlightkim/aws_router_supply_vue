@@ -20,9 +20,11 @@
 
 <script>
 export default {
+  /*
   data(){
     return {message: "Hi"}
   }
+  */
 }
 
 </script>
