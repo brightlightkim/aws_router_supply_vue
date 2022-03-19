@@ -1,40 +1,56 @@
-import { createApp, VueElement } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
+import router from './router'
 
-createApp(App).mount('#app')
-/*
-const Home = { template: '<p class="router-page home">Home</p>'};
-const About = { template: '<p class="router-page about">About</p>'};
-const Settings = {
-    template: '<p class="router-page settings">Settings</p>',
-};
+Vue.config.productionTip = false
 
-const Router = {
-    currentRoute: '/',
-    notFountRoute: Home,
-    basePath: window.location.pathname.replace(/\/+$/, ''),
-    routes: {
-        '/': Home,
-        '/about': About,
-        '/settings': Settings,
-    },
-};
 
-VueElement.component('app-a', {
-    template: 
-    '<a v-bind:href="href" v-bind:class="{active: isActive}" v-on:click.prevent="go"<slot></slot>  </a>',
-    data: function() {
-        return {
-            router: Router,
-        };
-    },
-    props: {//Property associated with it
-        href: {type: String, required},
-    },
-    computed: {
-        isActive() {
-            return this.href===this.router.currentRoute;
-        },,
-    }
-})
-*/
+/**Access This data through this.$root.$data */
+let data = {
+  currentID: 2,
+  routersNum: 4,
+  routers: [{
+    number: 1,
+    id: 1,
+    type: 'A',
+    location: 'Provo, Utah',
+  },
+  {
+    number: 2,
+    id: 2,
+    type: 'B',
+    location: 'Seoul, Korea'
+  },
+  {
+    number: 3,
+    id: 4,
+    type: 'B',
+    location: 'Daejoen, Korea'
+  },
+  {
+    number: 4,
+    id: 2,
+    type: 'B',
+    location: 'Yongin, Korea'
+  },
+  ],
+  getRouters() {
+    return this.routers;
+  },
+  addTicket(name, problem) {
+    this.routers.push({
+      id: this.currentID,
+      type: name,
+      description: problem
+    });
+    this.currentID += 1;
+  }
+}
+
+new Vue({
+  router,
+  data: data,
+  render: h => h(App)
+}).$mount('#app')
+
+
