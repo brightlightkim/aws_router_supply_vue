@@ -7,8 +7,8 @@ Vue.config.productionTip = false
 
 /**Access This data through this.$root.$data */
 let data = {
-  currentID: 2,
-  routersNum: 4,
+  currentID: 1,
+  routersNum: 1,
   routers: [{
     number: 1,
     id: 1,
@@ -37,12 +37,14 @@ let data = {
   getRouters() {
     return this.routers;
   },
-  addTicket(name, problem) {
+  addRouter(routerType, routerLocation) {
     this.routers.push({
+      number: this.routersNum,
       id: this.currentID,
-      type: name,
-      description: problem
-    });
+      type: routerType,
+      location: routerLocation
+    })
+    this.routersNum += 1;
     this.currentID += 1;
   }
 }
